@@ -6,8 +6,10 @@
 //  Copyright © 2019 Alex. All rights reserved.
 //
 
+
 #import <UIKit/UIKit.h>
 #import <CoreData/CoreData.h>
+
 
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
 
@@ -17,6 +19,4 @@
 
 - (void)saveContext;
 
-
 @end
-

@@ -6,17 +6,30 @@
 //  Copyright © 2019 Alex. All rights reserved.
 //
 
+
 #import "AppDelegate.h"
+#import "ViewController.h"
+
 
 @interface AppDelegate ()
 
 @end
 
+
 @implementation AppDelegate
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-	// Override point for customization after application launch.
+	
+	//Сборка архитектуры, создаем View, NavigationController, Window и собираем
+	ViewController *viewController = [ViewController new];
+	
+	UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:viewController];
+	
+	self.window = [UIWindow new];
+	[self.window setRootViewController:navController];
+	[self.window makeKeyAndVisible];
+	
 	return YES;
 }
 

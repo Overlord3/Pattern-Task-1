@@ -9,13 +9,16 @@
 /* Begin PBXBuildFile section */
 		FAEFE6142280CEED0026FDCE /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = FAEFE6132280CEED0026FDCE /* AppDelegate.m */; };
 		FAEFE6172280CEED0026FDCE /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FAEFE6162280CEED0026FDCE /* ViewController.m */; };
-		FAEFE61A2280CEED0026FDCE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FAEFE6182280CEED0026FDCE /* Main.storyboard */; };
 		FAEFE61D2280CEED0026FDCE /* Pattern_Task_Objective_C.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = FAEFE61B2280CEED0026FDCE /* Pattern_Task_Objective_C.xcdatamodeld */; };
 		FAEFE61F2280CEED0026FDCE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FAEFE61E2280CEED0026FDCE /* Assets.xcassets */; };
 		FAEFE6222280CEED0026FDCE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FAEFE6202280CEED0026FDCE /* LaunchScreen.storyboard */; };
 		FAEFE6252280CEED0026FDCE /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = FAEFE6242280CEED0026FDCE /* main.m */; };
 		FAEFE62F2280CEED0026FDCE /* Pattern_Task_Objective_CTests.m in Sources */ = {isa = PBXBuildFile; fileRef = FAEFE62E2280CEED0026FDCE /* Pattern_Task_Objective_CTests.m */; };
 		FAEFE63A2280CEEE0026FDCE /* Pattern_Task_Objective_CUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = FAEFE6392280CEEE0026FDCE /* Pattern_Task_Objective_CUITests.m */; };
+		FAEFE64B2280D6520026FDCE /* WordModel.m in Sources */ = {isa = PBXBuildFile; fileRef = FAEFE64A2280D6520026FDCE /* WordModel.m */; };
+		FAEFE64E2280D65C0026FDCE /* DefinitionModel.m in Sources */ = {isa = PBXBuildFile; fileRef = FAEFE64D2280D65C0026FDCE /* DefinitionModel.m */; };
+		FAEFE6522280D6A70026FDCE /* NetworkService.m in Sources */ = {isa = PBXBuildFile; fileRef = FAEFE6512280D6A70026FDCE /* NetworkService.m */; };
+		FAEFE6572280D7EE0026FDCE /* DefinitionTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FAEFE6562280D7EE0026FDCE /* DefinitionTableViewCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -41,7 +44,6 @@
 		FAEFE6132280CEED0026FDCE /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		FAEFE6152280CEED0026FDCE /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		FAEFE6162280CEED0026FDCE /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
-		FAEFE6192280CEED0026FDCE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		FAEFE61C2280CEED0026FDCE /* Pattern_Task_Objective_C.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Pattern_Task_Objective_C.xcdatamodel; sourceTree = "<group>"; };
 		FAEFE61E2280CEED0026FDCE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FAEFE6212280CEED0026FDCE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -53,6 +55,15 @@
 		FAEFE6352280CEEE0026FDCE /* Pattern-Task-Objective-CUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Pattern-Task-Objective-CUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FAEFE6392280CEEE0026FDCE /* Pattern_Task_Objective_CUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Pattern_Task_Objective_CUITests.m; sourceTree = "<group>"; };
 		FAEFE63B2280CEEE0026FDCE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FAEFE6492280D6520026FDCE /* WordModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WordModel.h; sourceTree = "<group>"; };
+		FAEFE64A2280D6520026FDCE /* WordModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WordModel.m; sourceTree = "<group>"; };
+		FAEFE64C2280D65C0026FDCE /* DefinitionModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DefinitionModel.h; sourceTree = "<group>"; };
+		FAEFE64D2280D65C0026FDCE /* DefinitionModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DefinitionModel.m; sourceTree = "<group>"; };
+		FAEFE6502280D6A70026FDCE /* NetworkService.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NetworkService.h; sourceTree = "<group>"; };
+		FAEFE6512280D6A70026FDCE /* NetworkService.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NetworkService.m; sourceTree = "<group>"; };
+		FAEFE6532280D7520026FDCE /* NetworkServiceProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NetworkServiceProtocol.h; sourceTree = "<group>"; };
+		FAEFE6552280D7EE0026FDCE /* DefinitionTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DefinitionTableViewCell.h; sourceTree = "<group>"; };
+		FAEFE6562280D7EE0026FDCE /* DefinitionTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DefinitionTableViewCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,9 +116,9 @@
 			children = (
 				FAEFE6122280CEEC0026FDCE /* AppDelegate.h */,
 				FAEFE6132280CEED0026FDCE /* AppDelegate.m */,
-				FAEFE6152280CEED0026FDCE /* ViewController.h */,
-				FAEFE6162280CEED0026FDCE /* ViewController.m */,
-				FAEFE6182280CEED0026FDCE /* Main.storyboard */,
+				FAEFE64F2280D6930026FDCE /* Service */,
+				FAEFE6482280D6190026FDCE /* Model */,
+				FAEFE6542280D77A0026FDCE /* View */,
 				FAEFE61E2280CEED0026FDCE /* Assets.xcassets */,
 				FAEFE6202280CEED0026FDCE /* LaunchScreen.storyboard */,
 				FAEFE6232280CEED0026FDCE /* Info.plist */,
@@ -133,6 +144,46 @@
 				FAEFE63B2280CEEE0026FDCE /* Info.plist */,
 			);
 			path = "Pattern-Task-Objective-CUITests";
+			sourceTree = "<group>";
+		};
+		FAEFE6482280D6190026FDCE /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				FAEFE6492280D6520026FDCE /* WordModel.h */,
+				FAEFE64A2280D6520026FDCE /* WordModel.m */,
+				FAEFE64C2280D65C0026FDCE /* DefinitionModel.h */,
+				FAEFE64D2280D65C0026FDCE /* DefinitionModel.m */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		FAEFE64F2280D6930026FDCE /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				FAEFE6532280D7520026FDCE /* NetworkServiceProtocol.h */,
+				FAEFE6502280D6A70026FDCE /* NetworkService.h */,
+				FAEFE6512280D6A70026FDCE /* NetworkService.m */,
+			);
+			name = Service;
+			sourceTree = "<group>";
+		};
+		FAEFE6542280D77A0026FDCE /* View */ = {
+			isa = PBXGroup;
+			children = (
+				FAEFE6582280D7F40026FDCE /* TableViewCell */,
+				FAEFE6152280CEED0026FDCE /* ViewController.h */,
+				FAEFE6162280CEED0026FDCE /* ViewController.m */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		FAEFE6582280D7F40026FDCE /* TableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				FAEFE6552280D7EE0026FDCE /* DefinitionTableViewCell.h */,
+				FAEFE6562280D7EE0026FDCE /* DefinitionTableViewCell.m */,
+			);
+			name = TableViewCell;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -240,7 +291,6 @@
 			files = (
 				FAEFE6222280CEED0026FDCE /* LaunchScreen.storyboard in Resources */,
 				FAEFE61F2280CEED0026FDCE /* Assets.xcassets in Resources */,
-				FAEFE61A2280CEED0026FDCE /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -265,9 +315,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FAEFE6572280D7EE0026FDCE /* DefinitionTableViewCell.m in Sources */,
 				FAEFE61D2280CEED0026FDCE /* Pattern_Task_Objective_C.xcdatamodeld in Sources */,
 				FAEFE6172280CEED0026FDCE /* ViewController.m in Sources */,
+				FAEFE64E2280D65C0026FDCE /* DefinitionModel.m in Sources */,
 				FAEFE6252280CEED0026FDCE /* main.m in Sources */,
+				FAEFE64B2280D6520026FDCE /* WordModel.m in Sources */,
+				FAEFE6522280D6A70026FDCE /* NetworkService.m in Sources */,
 				FAEFE6142280CEED0026FDCE /* AppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -304,14 +358,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		FAEFE6182280CEED0026FDCE /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				FAEFE6192280CEED0026FDCE /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		FAEFE6202280CEED0026FDCE /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
