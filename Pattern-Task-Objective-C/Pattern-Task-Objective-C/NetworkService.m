@@ -186,6 +186,12 @@ const NSInteger imagesPerPage = 10;
 	[self.downloadTasksArray removeAllObjects];
 }
 
+/**
+ Поиск изображений в сервисе
+ 
+ @param searchSrting Строка поиска, на английском обязательно
+ @param page Номер страницы, с 1
+ */
 - (void)searchImagesForString:(NSString *)searchSrting andPage:(NSInteger)page
 {
 	if (page == 1)
