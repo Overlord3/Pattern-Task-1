@@ -10,6 +10,7 @@
 #import "ViewController.h"
 #import "NetworkService.h"
 #import "DefinitionTableViewCell.h"
+#import "ImageTableViewCell.h"
 
 
 @interface ViewController () <UISearchBarDelegate, UITableViewDataSource, UITableViewDelegate>
@@ -19,6 +20,8 @@
 
 @property (nonatomic, strong) WordModel *wordModel; /**< Слово с определениями для отображения */
 @property (nonatomic, strong) NetworkService *networkService; /**< Сервис для взаимодействия с сетью */
+
+@property (nonatomic, strong) NSMutableArray<UIImage *> *imagesArray; /**< Массив данных картинок */
 
 @end
 
@@ -32,6 +35,7 @@
 	[self prepareModels];
 	[self prepareUI];
 	[self.tableView registerClass:DefinitionTableViewCell.class forCellReuseIdentifier:DefinitionTableViewCell.description];
+	[self.tableView registerClass:ImageTableViewCell.class forCellReuseIdentifier:ImageTableViewCell.description];
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -42,6 +46,7 @@
 
 - (void)prepareModels
 {
+	self.imagesArray = [NSMutableArray new];
 	self.networkService = [NetworkService initService];
 	self.networkService.outputDelegate = self;
 }
@@ -76,8 +81,14 @@
 	//скрыть клавиатуру
 	[searchBar resignFirstResponder];
 	
+	//Удалить все с прошлого поиска
+	[self.tableView setContentOffset:CGPointZero animated:YES];
+	[self.imagesArray removeAllObjects];
+	[self setArraySize:10];
+	
 	//Вызвать поиск
 	[self.networkService searchDefinitionsForString:searchBar.text];
+	[self.networkService searchImagesForString:searchBar.text andPage:1];
 }
 
 
@@ -90,21 +101,31 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-	return self.wordModel.definitions.count;
+	return self.wordModel.definitions.count + self.imagesArray.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-	DefinitionTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:DefinitionTableViewCell.description forIndexPath:indexPath];
-	
-	DefinitionModel *model = self.wordModel.definitions[indexPath.row];
-	
-	cell.definitionLabel.text = [model getDefinition];
-	cell.exampleLabel.text = [model getExample];
-	cell.authorLabel.text = [model getAuthor];
-	cell.dateLabel.text = [model getDate].description;
-	
-	return cell;
+	if (indexPath.row < self.wordModel.definitions.count)
+	{
+		DefinitionTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:DefinitionTableViewCell.description forIndexPath:indexPath];
+		
+		DefinitionModel *model = self.wordModel.definitions[indexPath.row];
+		
+		cell.definitionLabel.text = [model getDefinition];
+		cell.exampleLabel.text = [model getExample];
+		cell.authorLabel.text = [model getAuthor];
+		cell.dateLabel.text = [model getDate].description;
+		
+		return cell;
+	}
+	else
+	{
+		ImageTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:ImageTableViewCell.description forIndexPath:indexPath];
+		
+		cell.customImageView.image = self.imagesArray[indexPath.row - self.wordModel.definitions.count];
+		return cell;
+	}
 }
 
 
@@ -112,13 +133,21 @@
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-	DefinitionModel *model = self.wordModel.definitions[indexPath.row];
-	CGFloat height = [DefinitionTableViewCell
-					  calculateHeightWithDefinition:[model getDefinition]
-					  example:[model getExample]
-					  author:[model getAuthor]
-					  date:[model getDate].description];
-	return height;
+	if (indexPath.row < self.wordModel.definitions.count)
+	{
+		DefinitionModel *model = self.wordModel.definitions[indexPath.row];
+		CGFloat height = [DefinitionTableViewCell
+						  calculateHeightWithDefinition:[model getDefinition]
+						  example:[model getExample]
+						  author:[model getAuthor]
+						  date:[model getDate].description];
+		return height;
+	}
+	else
+	{
+		//Для ячейки с картинкой 250 и по 8 границы
+		return 250+16;
+	}
 }
 
 /**
@@ -132,4 +161,39 @@
 	[self.tableView reloadData];
 }
 
+/**
+ Задает размер массива с изображениями и количество ячеек в коллекшн вью
+ 
+ @param count размер массива
+ */
+- (void)prepareArrayForImagesCount:(NSInteger)count
+{
+	[self setArraySize:count];
+}
+
+- (void)setArraySize:(NSInteger)count
+{
+	while (self.imagesArray.count < count)
+	{
+		[self.imagesArray addObject:[UIImage new]];
+	}
+	[self.tableView reloadData];
+}
+
+/**
+ Устанавливает картинку в массив
+ 
+ @param imageData Данные изображения
+ @param number Индекс в массиве
+ */
+- (void)loadingImageFinishedWith:(NSData *)imageData atNumber:(NSInteger)number
+{
+	UIImage *image = [UIImage imageWithData:imageData];
+	
+	//Проверка, что изображение успешно получено
+	if (!image) { return; }
+	
+	[self.imagesArray setObject:[UIImage imageWithData:imageData] atIndexedSubscript:number];
+	[self.tableView reloadData];
+}
 @end
