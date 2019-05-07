@@ -6,12 +6,19 @@
 //  Copyright © 2019 Alex. All rights reserved.
 //
 
+
 #import <Foundation/Foundation.h>
 
-NS_ASSUME_NONNULL_BEGIN
 
 @interface NetworkHelper : NSObject
 
-@end
+/**
+ Получение URL с запросом к сервису с текстом поиска
+ 
+ @param searchString текст поиска
+ @param page страница, с 1
+ @return URL в строке
+ */
++ (NSString *)URLForSearchString:(NSString *)searchString andPage:(NSInteger)page;
 
-NS_ASSUME_NONNULL_END
+@end
