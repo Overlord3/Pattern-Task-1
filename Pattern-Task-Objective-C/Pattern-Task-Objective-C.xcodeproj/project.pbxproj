@@ -19,6 +19,9 @@
 		FAEFE64E2280D65C0026FDCE /* DefinitionModel.m in Sources */ = {isa = PBXBuildFile; fileRef = FAEFE64D2280D65C0026FDCE /* DefinitionModel.m */; };
 		FAEFE6522280D6A70026FDCE /* NetworkService.m in Sources */ = {isa = PBXBuildFile; fileRef = FAEFE6512280D6A70026FDCE /* NetworkService.m */; };
 		FAEFE6572280D7EE0026FDCE /* DefinitionTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FAEFE6562280D7EE0026FDCE /* DefinitionTableViewCell.m */; };
+		FAEFE65C228171730026FDCE /* ImageRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = FAEFE65B228171730026FDCE /* ImageRequest.m */; };
+		FAEFE65F228171A20026FDCE /* NetworkHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = FAEFE65E228171A20026FDCE /* NetworkHelper.m */; };
+		FAEFE6622281745E0026FDCE /* ImageTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FAEFE6612281745E0026FDCE /* ImageTableViewCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -64,6 +67,12 @@
 		FAEFE6532280D7520026FDCE /* NetworkServiceProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NetworkServiceProtocol.h; sourceTree = "<group>"; };
 		FAEFE6552280D7EE0026FDCE /* DefinitionTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DefinitionTableViewCell.h; sourceTree = "<group>"; };
 		FAEFE6562280D7EE0026FDCE /* DefinitionTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DefinitionTableViewCell.m; sourceTree = "<group>"; };
+		FAEFE65A228171730026FDCE /* ImageRequest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ImageRequest.h; sourceTree = "<group>"; };
+		FAEFE65B228171730026FDCE /* ImageRequest.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ImageRequest.m; sourceTree = "<group>"; };
+		FAEFE65D228171A20026FDCE /* NetworkHelper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NetworkHelper.h; sourceTree = "<group>"; };
+		FAEFE65E228171A20026FDCE /* NetworkHelper.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NetworkHelper.m; sourceTree = "<group>"; };
+		FAEFE6602281745E0026FDCE /* ImageTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ImageTableViewCell.h; sourceTree = "<group>"; };
+		FAEFE6612281745E0026FDCE /* ImageTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ImageTableViewCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -153,6 +162,8 @@
 				FAEFE64A2280D6520026FDCE /* WordModel.m */,
 				FAEFE64C2280D65C0026FDCE /* DefinitionModel.h */,
 				FAEFE64D2280D65C0026FDCE /* DefinitionModel.m */,
+				FAEFE65A228171730026FDCE /* ImageRequest.h */,
+				FAEFE65B228171730026FDCE /* ImageRequest.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -163,6 +174,8 @@
 				FAEFE6532280D7520026FDCE /* NetworkServiceProtocol.h */,
 				FAEFE6502280D6A70026FDCE /* NetworkService.h */,
 				FAEFE6512280D6A70026FDCE /* NetworkService.m */,
+				FAEFE65D228171A20026FDCE /* NetworkHelper.h */,
+				FAEFE65E228171A20026FDCE /* NetworkHelper.m */,
 			);
 			name = Service;
 			sourceTree = "<group>";
@@ -182,6 +195,8 @@
 			children = (
 				FAEFE6552280D7EE0026FDCE /* DefinitionTableViewCell.h */,
 				FAEFE6562280D7EE0026FDCE /* DefinitionTableViewCell.m */,
+				FAEFE6602281745E0026FDCE /* ImageTableViewCell.h */,
+				FAEFE6612281745E0026FDCE /* ImageTableViewCell.m */,
 			);
 			name = TableViewCell;
 			sourceTree = "<group>";
@@ -315,12 +330,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FAEFE6622281745E0026FDCE /* ImageTableViewCell.m in Sources */,
 				FAEFE6572280D7EE0026FDCE /* DefinitionTableViewCell.m in Sources */,
 				FAEFE61D2280CEED0026FDCE /* Pattern_Task_Objective_C.xcdatamodeld in Sources */,
 				FAEFE6172280CEED0026FDCE /* ViewController.m in Sources */,
 				FAEFE64E2280D65C0026FDCE /* DefinitionModel.m in Sources */,
+				FAEFE65F228171A20026FDCE /* NetworkHelper.m in Sources */,
 				FAEFE6252280CEED0026FDCE /* main.m in Sources */,
 				FAEFE64B2280D6520026FDCE /* WordModel.m in Sources */,
+				FAEFE65C228171730026FDCE /* ImageRequest.m in Sources */,
 				FAEFE6522280D6A70026FDCE /* NetworkService.m in Sources */,
 				FAEFE6142280CEED0026FDCE /* AppDelegate.m in Sources */,
 			);
