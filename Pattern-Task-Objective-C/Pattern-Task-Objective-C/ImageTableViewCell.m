@@ -33,8 +33,6 @@
 {
 	//Всего высота - 250
 	[super layoutSubviews];
-	//Допустим такое расположение:
-	//Определение, ниже пример, ниже автор и дата помельче
 	CGFloat height = 250+16;
 	CGFloat width = self.bounds.size.width;
 	CGFloat leftRightBorder = (width - 250)/2;

@@ -13,7 +13,6 @@
 
 @interface NetworkService : NSObject<NetworkServiceInputProtocol, NSURLSessionDelegate>
 
-
 /**
  Инициализатор сервиса
  

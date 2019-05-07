@@ -15,13 +15,12 @@
 
 @interface ViewController () <UISearchBarDelegate, UITableViewDataSource, UITableViewDelegate>
 
-@property (nonatomic, strong) UITableView *tableView;
-@property (nonatomic, strong) UISearchBar *searchBar;
+@property (nonatomic, strong) UITableView *tableView; /**< UI для отображения результатов поиска */
+@property (nonatomic, strong) UISearchBar *searchBar; /**< UI для поиска определений и изображений  */
 
 @property (nonatomic, strong) WordModel *wordModel; /**< Слово с определениями для отображения */
-@property (nonatomic, strong) NetworkService *networkService; /**< Сервис для взаимодействия с сетью */
-
 @property (nonatomic, strong) NSMutableArray<UIImage *> *imagesArray; /**< Массив данных картинок */
+@property (nonatomic, strong) NetworkService *networkService; /**< Сервис для взаимодействия с сетью */
 
 @end
 
@@ -171,6 +170,12 @@
 	[self setArraySize:count];
 }
 
+
+/**
+ Увеличивает размер массива, если необходимо до count
+
+ @param count количество элементов в массиве
+ */
 - (void)setArraySize:(NSInteger)count
 {
 	while (self.imagesArray.count < count)

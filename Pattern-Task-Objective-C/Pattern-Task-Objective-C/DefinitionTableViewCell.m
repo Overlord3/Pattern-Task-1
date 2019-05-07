@@ -34,10 +34,9 @@
  */
 - (void)layoutSubviews
 {
-	//Всего высота -
 	[super layoutSubviews];
 	//Допустим такое расположение:
-	//Определение, ниже пример, ниже автор и дата помельче
+	//Определение, ниже пример, ниже автор и дата
 	CGFloat width = self.bounds.size.width;
 	CGFloat border = 8;
 	CGFloat shift = 5;
@@ -48,7 +47,7 @@
 	self.definitionLabel.font = [UIFont systemFontOfSize:17 weight:UIFontWeightMedium];
 	self.definitionLabel.textAlignment = NSTextAlignmentLeft;
 	self.definitionLabel.numberOfLines = 0;
-	//вычисляем размер
+	
 	CGSize expectedLabelSize = [self.definitionLabel sizeThatFits:maximumLabelSize];
 	self.definitionLabel.frame = CGRectMake(border, border, width - border*2, expectedLabelSize.height);
 	[self.contentView addSubview:self.definitionLabel];
@@ -57,7 +56,7 @@
 	self.exampleLabel.font = [UIFont systemFontOfSize:16 weight:UIFontWeightRegular];
 	self.exampleLabel.textAlignment = NSTextAlignmentLeft;
 	self.exampleLabel.numberOfLines = 0;
-	//вычисляем размер
+	
 	expectedLabelSize = [self.exampleLabel sizeThatFits:maximumLabelSize];
 	self.exampleLabel.frame = CGRectMake(border, shift + CGRectGetMaxY(self.definitionLabel.frame), width - border*2, expectedLabelSize.height);
 	[self.contentView addSubview:self.exampleLabel];
@@ -67,7 +66,7 @@
 	self.authorLabel.font = [UIFont systemFontOfSize:15 weight:UIFontWeightLight];
 	self.authorLabel.textAlignment = NSTextAlignmentLeft;
 	self.authorLabel.numberOfLines = 0;
-	//вычисляем размер
+	
 	expectedLabelSize = [self.authorLabel sizeThatFits:maximumLabelSize];
 	self.authorLabel.frame = CGRectMake(border, shift + CGRectGetMaxY(self.exampleLabel.frame), width - border*2, expectedLabelSize.height);
 	[self.contentView addSubview:self.authorLabel];
@@ -76,7 +75,7 @@
 	self.dateLabel.font = [UIFont systemFontOfSize:15 weight:UIFontWeightLight];
 	self.dateLabel.textAlignment = NSTextAlignmentLeft;
 	self.dateLabel.numberOfLines = 0;
-	//вычисляем размер
+	
 	expectedLabelSize = [self.dateLabel sizeThatFits:maximumLabelSize];
 	self.dateLabel.frame = CGRectMake(border, shift + CGRectGetMaxY(self.authorLabel.frame), width - border*2, expectedLabelSize.height);
 	[self.contentView addSubview:self.dateLabel];

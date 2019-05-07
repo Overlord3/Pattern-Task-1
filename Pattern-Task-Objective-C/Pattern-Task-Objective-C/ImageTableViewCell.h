@@ -15,7 +15,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface ImageTableViewCell : UITableViewCell
 
-@property (nonatomic, strong) UIImageView *customImageView;
+@property (nonatomic, strong) UIImageView *customImageView; /**< UI для картинки */
 
 @end
 
